@@ -1,4 +1,18 @@
 import './Button.css'
 
-export default props => 
-    <button className='button'>{props.label}</button>
+export default ({ label, func }) => {
+    function click() {
+        if(label == 'AC') {
+            console.log('limpar')
+            return
+        }
+        console.log(label)
+    }
+
+    return (
+        <button className={`button ${func}`} onClick={click}>
+            { label }
+        </button>
+    )
+}
+    
